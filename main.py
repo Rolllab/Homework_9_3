@@ -7,7 +7,7 @@ class HomeWork(LinkedList):
         if index == 1:
             self.insert_at_head(data)
             return f"Узел с данными {new_node.data} добавлен на позицию {index}"
-        """Опционально"""
+
         current_node = self.head
         if index > len(LinkedList.List):
             self.insert_at_tail(data)
@@ -16,9 +16,7 @@ class HomeWork(LinkedList):
         while current_node is not None and current_index < index - 1:
             current_node = current_node.next_node
             current_index += 1
-        """Если есть опционально (код выше то следующие 2 строки не нужны)"""
-        if current_node is None:
-            return None
+
         new_node.next_node = current_node.next_node
         current_node.next_node = new_node
         HomeWork.List.insert(index - 1, new_node.data)
