@@ -6,7 +6,7 @@ class Node:
 
 
 class LinkedList:
-
+    List = []
     def __init__(self):
         self.head = None
         self.tail = None
@@ -19,6 +19,7 @@ class LinkedList:
             new_node.next_node = self.head  # работа с текущей головой
             self.head.prev_node = new_node  # работа с текущей головой
         self.head = new_node
+        LinkedList.List.insert(0, new_node.data)
         return f"Теперь в голове узел с данными {self.head.data}"
 
     def insert_at_tail(self, data):
@@ -30,6 +31,7 @@ class LinkedList:
             self.tail.next_node = new_node
             new_node.prev_node = self.tail
         self.tail = new_node
+        LinkedList.List.append(self.tail.data)
         return f"Теперь в хвосте узел с данными {self.tail.data}"
 
     def remove_from_head(self):
